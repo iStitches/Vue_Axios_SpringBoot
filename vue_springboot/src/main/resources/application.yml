@@ -1,0 +1,22 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /vue
+spring:
+  application:
+    name: vue_springboot
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.100.119.221:3306/vue?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.vue.demo.dao: debug
+    root: info
+

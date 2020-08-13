@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vue.demo.dao.UserDao">
+    <select id="findAllUsers" resultType="com.vue.demo.entity.User">
+        select * from t_user
+    </select>
+
+    <insert id="insertUser" parameterType="com.vue.demo.entity.User">
+        insert into t_user(name,sex,birth) values(#{name},#{sex},#{birth})
+    </insert>
+
+    <delete id="deleteUser">
+        delete from t_user where id=#{id}
+    </delete>
+
+    <select id="findById" resultType="com.vue.demo.entity.User">
+        select * from t_user where id=#{id}
+    </select>
+
+    <update id="updateUser" parameterType="com.vue.demo.entity.User">
+        update t_user set name=#{name},sex=#{sex},birth=#{birth} where id=#{id}
+    </update>
+</mapper>
